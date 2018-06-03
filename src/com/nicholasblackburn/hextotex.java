@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 
 public class hextotex {
     public static void main (String[] args) throws IOException {
-        System.out.print("convert hex to text");
+        System.out.print("convert hex to text\ng");
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
         String hex =bf.readLine();
