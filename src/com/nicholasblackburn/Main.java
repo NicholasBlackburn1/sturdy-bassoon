@@ -18,11 +18,11 @@ public class Main {
 
             /***************************************************/
 
-            System.out.println("Choose from these choices");
+            System.out.println("Nicks all in one text to hex to binary converter");
             System.out.println("-------------------------\n");
             System.out.println("1 - text to hex");
             System.out.println("2 - hex to binary");
-            System.out.println("3 - help");
+            System.out.println("3 - guide");
             System.out.println("4 - Quit");
 
             selection = input.nextInt();
@@ -31,8 +31,14 @@ public class Main {
         }
         if (selection == 2){
             hextobinary.main(args);
-
-         }
+            }
+            if(selection ==3){
+            System.out.print("to make text to binary \n");
+            System.out.print("first use text to hex and then use hex to binary");
+            }
+            if (selection == 4){
+                System.exit(0);
+            }
         return selection;
 
 
