@@ -22,6 +22,7 @@ public class hextobinary {
         int i = Integer.parseInt(hex);               //hex to decimal
         String by = Integer.toBinaryString(i);       //decimal to binary
         System.out.println("This is Binary: " + by);
+        Main.main(args);
     }
         }
 

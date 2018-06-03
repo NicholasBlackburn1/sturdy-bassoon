@@ -31,6 +31,7 @@ public class texttohex {
 
         System.out.println("ASCII = " + s);
         System.out.println("Hex = " + builder.toString());
+        Main.main(args);
     }
 }
 

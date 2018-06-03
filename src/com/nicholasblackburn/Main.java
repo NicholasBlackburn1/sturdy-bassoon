@@ -23,7 +23,8 @@ public class Main{
             System.out.println("1 - text to hex");
             System.out.println("2 - hex to binary");
             System.out.println("3 - guide");
-            System.out.println("4 - Quit");
+            System.out.println("4 - hex to ascii");
+            System.out.println("5 - Quit");
 
             selection = input.nextInt();
         if (selection == 1){
@@ -36,7 +37,10 @@ public class Main{
             System.out.print("to make text to binary \n");
             System.out.print("first use text to hex and then use hex to binary");
             }
-            if (selection == 4) {
+            if (selection == 4){
+            hextotex.main(args);
+            }
+            if (selection == 5) {
                 System.exit(0);
             }
 
