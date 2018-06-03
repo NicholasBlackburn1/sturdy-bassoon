@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="video player:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/video_player_jar</output-path>
+    <root id="archive" name="video player.jar">
+      <element id="module-output" name="video player" />
+    </root>
+  </artifact>
+</component>
