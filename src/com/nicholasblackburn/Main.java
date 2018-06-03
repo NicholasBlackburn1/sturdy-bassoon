@@ -8,8 +8,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class Main {
-    public int Main(String[] args) throws IOException {
+public class Main{
+    public static void main(String[] args) throws IOException {
 
         int menu;
 
@@ -36,10 +36,9 @@ public class Main {
             System.out.print("to make text to binary \n");
             System.out.print("first use text to hex and then use hex to binary");
             }
-            if (selection == 4){
+            if (selection == 4) {
                 System.exit(0);
             }
-        return selection;
 
 
         }
