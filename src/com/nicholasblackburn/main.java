@@ -1,4 +1,5 @@
-/*
+/*ed by NicholasBlackburn (c) 2018
+Copyright
  */
 
 package com.nicholasblackburn;
@@ -8,7 +9,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class Main{
+public class main{
     public static void main(String[] args) throws IOException {
 
         int menu;
@@ -25,7 +26,7 @@ public class Main{
             System.out.println("3 - guide");
             System.out.println("4 - hex to ascii");
             System.out.println("5 - Quit");
-
+            System.out.println("-------------------------\n");
             selection = input.nextInt();
         if (selection == 1){
             texttohex.main(args);
@@ -47,5 +48,3 @@ public class Main{
 
         }
     }
-
-

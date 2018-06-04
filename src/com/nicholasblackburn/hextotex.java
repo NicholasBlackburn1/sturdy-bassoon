@@ -20,7 +20,6 @@ public class hextotex {
             output.append((char)Integer.parseInt(str, 16));
         }
         System.out.println(output);
-
+        main.main(args);
     }
     }
-
