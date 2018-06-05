@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_video_player" default="compile.module.video_player">
+  <dirname property="module.video_player.basedir" file="${ant.file.module_video_player}"/>
+  
+  <property name="module.jdk.home.video_player" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.video_player" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.video_player" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.video_player" value="-encoding UTF-8 -source 1.8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="video_player.output.dir" value="${module.video_player.basedir}/out/production/video player"/>
+  <property name="video_player.testoutput.dir" value="${module.video_player.basedir}/out/test/video player"/>
+  
+  <path id="video_player.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="video_player.module.production.classpath">
+    <path refid="${module.jdk.classpath.video_player}"/>
+  </path>
+  
+  <path id="video_player.runtime.production.module.classpath">
+    <pathelement location="${video_player.output.dir}"/>
+  </path>
+  
+  <path id="video_player.module.classpath">
+    <path refid="${module.jdk.classpath.video_player}"/>
+    <pathelement location="${video_player.output.dir}"/>
+  </path>
+  
+  <path id="video_player.runtime.module.classpath">
+    <pathelement location="${video_player.testoutput.dir}"/>
+    <pathelement location="${video_player.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.video_player">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.video_player">
+    <patternset refid="excluded.from.module.video_player"/>
+  </patternset>
+  
+  <path id="video_player.module.sourcepath">
+    <dirset dir="${module.video_player.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.video_player" depends="compile.module.video_player.production,compile.module.video_player.tests" description="Compile module video player"/>
+  
+  <target name="compile.module.video_player.production" description="Compile module video player; production classes">
+    <mkdir dir="${video_player.output.dir}"/>
+    <javac destdir="${video_player.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.video_player}/javac">
+      <compilerarg line="${compiler.args.video_player}"/>
+      <bootclasspath refid="video_player.module.bootclasspath"/>
+      <classpath refid="video_player.module.production.classpath"/>
+      <src refid="video_player.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.video_player"/>
+    </javac>
+    
+    <copy todir="${video_player.output.dir}">
+      <fileset dir="${module.video_player.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.video_player.tests" depends="compile.module.video_player.production" description="compile module video player; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.video_player" description="cleanup module">
+    <delete dir="${video_player.output.dir}"/>
+    <delete dir="${video_player.testoutput.dir}"/>
+  </target>
+</project>
